@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   Dimensions,
   StyleSheet,
@@ -26,7 +26,7 @@ function App() {
   const locationSearchRef = useRef();
   const [loading, setLoading] = useState(true);
 
-  const detectLoAddressTypes = (arr, type) => {
+  const detectLoAddressTypes = useCallback((arr, type) => {
     let temp = '';
     // console.log(arr);
     for (let i = 0; i < arr.length; i++) {
@@ -41,9 +41,9 @@ function App() {
     } else {
       return temp + ' ';
     }
-  };
+  }, []);
 
-  const setAdministrativeareaLevel2 = arr => {
+  const setAdministrativeareaLevel2 = useCallback(arr => {
     let temp = '';
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].types.includes('administrative_area_level_2')) {
@@ -52,7 +52,7 @@ function App() {
       }
     }
     return temp;
-  };
+  });
   useEffect(() => {
     Geocoder.init('AIzaSyB5CSpGmHJxdp1JgZlNYj0jHc4FS91Wv0E');
     Geolocation.getCurrentPosition(info => {
