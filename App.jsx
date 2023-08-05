@@ -205,6 +205,7 @@ function App() {
           }}>
           <Image
             source={require('./src/resources/images/get_my_location-button.png')}
+            style={{width: 35, height: 35, resizeMode: 'contain'}}
           />
         </TouchableOpacity>
 
@@ -382,6 +383,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: height * 0.78,
     left: width * 0.83,
+    width: 50,
+    height: 50,
+    borderRadius: 10,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   confirmButton: {
     position: 'absolute',

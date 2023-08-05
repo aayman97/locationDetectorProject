@@ -36,7 +36,7 @@ const BaseButton = ({
 
 const styles = StyleSheet.create({
   btnWrapper: {
-    backgroundColor: 'green',
+    backgroundColor: '#aa0082',
     paddingVertical: 13,
     borderRadius: 5,
     justifyContent: 'center',
